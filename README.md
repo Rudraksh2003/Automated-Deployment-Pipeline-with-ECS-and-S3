@@ -38,7 +38,27 @@ The goal of this project is to automate the build and deployment process of appl
 - Node.js installed for the build process
 
 ## Setup
+## AWS S3 Public Policy
+```{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::vercel-clone-outputs/*"
+        },
+        {
+            "Sid": "AllowWebAccess",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::vercel-clone-outputs/*"
+        }
+    ]
+}
 
+```
 ### Clone Repository
 
 ```sh
